@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app.backdrop">
+<head>
+    <meta charset="utf-8">
+    <title>Backdrop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Backdrop">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <style>
+        .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+            transition: all linear 0.5s;
+            display: block !important;
+        }
+
+        .animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
+            opacity: 0;
+        }
+
+        .animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- dependency scripts -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    <script src="fullscreen.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="apple-touch-icon" href="">
+</head>
+
+<!-- shell code following -->
+
+<body>
+
+<!-- view following -->
+
+<ng-view></ng-view>
+
+<!-- JS code scripts -->
+
+<script src="app/app.js"></script>
+
+<script src="app/controllers/homeController.js"></script>
+
+</body>
+
+</html>
