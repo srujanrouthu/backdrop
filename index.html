@@ -11,31 +11,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
-        p.viewport {
-            height: 100% ;
-            position: relative ;
-            width: 100% ;
+        body {
+          background-color: black;
         }
-        p.viewport img.fader {
-            display: none ;
-            height: 100% ;
-            left: 0px ;
-            position: absolute ;
-            top: 0px ;
-            width: 100% ;
-            z-index: 2 ;
-        }
-        p.viewport img.fader.show {
-            display: block ;
-            transition: opacity 250ms ease ;
-        }
-        p.viewport img.fader.fadeOut {
-            opacity: 0 ;
-        }
-        p.viewport img.image {
+        .image {
             display: block ;
             height: 100% ;
             width: 100% ;
+        }
+        .holder {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: opacity .25s;
+        }
+        .opaque {
+            opacity: 0.1;
         }
     </style>
 
