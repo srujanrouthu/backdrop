@@ -15,7 +15,7 @@
 
       $http({
           method: 'GET',
-          url: '/images.json'
+          url: 'images.json'
       }).success(function (response) {
           var i = 0
           $scope.image.source = response[i].url
