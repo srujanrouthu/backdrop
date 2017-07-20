@@ -1,10 +1,11 @@
 <div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0"
 <div ng-if="render"
+     fullscreen
      style="position: fixed; top: 0; right: 0; bottom: 0; left: 0">
-    <img style="position: fixed; top: 0; right: 0; bottom: 0; left: 0"
-          class="animate-show" fade-in
-          fullscreen ng-src="{{ imageUrl }}" />
-    <button
-        style="position: fixed; top: 0; right: 0; z-index: 1000"
-        class="btn" ng-click="toggleFullScreen()">FS</button>
+    <p bn-fade-helper class="viewport">
+        <img class="image" title="{{ image.author }}" ng-src="{{ image.source }}" ng-click="toggleFullScreen()" />
+    </p>
+    <div style="position: fixed; right: 20px; bottom: 10px">
+        <h5 style="color: white; font-family: 'Open Sans'" ng-if="source">Source: {{ image.author }}</h5>
+    </div>
 </div>

@@ -9,18 +9,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
-        .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-            transition: all linear 0.5s;
-            display: block !important;
+        p.viewport {
+            height: 100% ;
+            position: relative ;
+            width: 100% ;
         }
-
-        .animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
-            opacity: 0;
+        p.viewport img.fader {
+            display: none ;
+            height: 100% ;
+            left: 0px ;
+            position: absolute ;
+            top: 0px ;
+            width: 100% ;
+            z-index: 2 ;
         }
-
-        .animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
-            opacity: 1;
+        p.viewport img.fader.show {
+            display: block ;
+            transition: opacity 250ms ease ;
+        }
+        p.viewport img.fader.fadeOut {
+            opacity: 0 ;
+        }
+        p.viewport img.image {
+            display: block ;
+            height: 100% ;
+            width: 100% ;
         }
     </style>
 

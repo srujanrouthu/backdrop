@@ -10,18 +10,22 @@
            Fullscreen.all();
       }
 
+      $scope.image = {}
+
       $http({
           method: 'GET',
           url: '/images.json'
       }).success(function (response) {
           var i = 0
-          $scope.imageUrl = response[i].url
+          $scope.image.source = response[i].url
+          $scope.image.author = response[i].author
           $interval(function () {
               i++
               if (i === response.length - 1) {
                   i = 0
               }
-              $scope.imageUrl = response[i].url
+              $scope.image.source = response[i].url
+              $scope.image.author = response[i].author
           }, 5000)
           $scope.render = true
       })
