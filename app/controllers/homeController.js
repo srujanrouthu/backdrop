@@ -22,7 +22,7 @@
           $scope.image.author = response[i].author
           $timeout(function () {
             $scope.isOpaque = true;
-          }, 4750)
+          }, 19750)
           $interval(function () {
               i++
               if (i === response.length - 1) {
@@ -35,8 +35,8 @@
               }, 250)
               $timeout(function () {
                 $scope.isOpaque = true;
-              }, 4750)
-          }, 5000)
+              }, 19750)
+          }, 20000)
           $scope.render = true
       })
 
