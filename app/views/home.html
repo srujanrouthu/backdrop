@@ -1,6 +1,7 @@
 <div class="holder" ng-if="render" fullscreen ng-class="{opaque: isOpaque}">
-    <img class="image" title="{{ image.author }}" ng-src="{{ image.source }}" ng-click="toggleFullScreen()" />
-    <div style="position: fixed; right: 20px; bottom: 10px">
-        <h5 style="color: white; font-family: 'Open Sans'" ng-if="image.author">Source: {{ image.author }}</h5>
+    <img class="image" title="{{ image.title }}" ng-src="{{ image.url }}" ng-click="toggleFullScreen()" />
+    <div style="position: fixed; right: 20px; bottom: 10px; width: 30%">
+        <h5 style="color: white; font-family: 'Open Sans'" ng-if="image.title">{{ image.title }}</h5>
+        <p style="color: white; font-family: 'Open Sans'" ng-if="image.explanation">{{ image.explanation }}</p>
     </div>
 </div>

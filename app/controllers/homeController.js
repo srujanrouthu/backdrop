@@ -1,44 +1,39 @@
 (function () {
     var HomeController = function ($scope, $http, $interval, $timeout, Fullscreen) {
 
-      $scope.render = false
+      $scope.render = false;
+
+      var apod_url = 'https://api.nasa.gov/planetary/apod';
+      var key = 'FRRFYrhD6A5p16gC1Tuclc56YP5HZvaV2rjVOpbV';
 
       $scope.toggleFullScreen = function() {
         if (Fullscreen.isEnabled())
            Fullscreen.cancel();
         else
            Fullscreen.all();
-      }
+      };
 
-      $scope.image = {}
-      $scope.isOpaque = false;
+      $scope.image = {};
 
-      $http({
-          method: 'GET',
-          url: 'images.json'
-      }).success(function (response) {
-          var i = 0
-          $scope.image.source = response[i].url
-          $scope.image.author = response[i].author
-          $timeout(function () {
-            $scope.isOpaque = true;
-          }, 19750)
-          $interval(function () {
-              i++
-              if (i === response.length - 1) {
-                  i = 0
-              }
-              $scope.image.source = response[i].url
-              $scope.image.author = response[i].author
-              $timeout(function () {
-                  $scope.isOpaque = false;
-              }, 250)
-              $timeout(function () {
-                $scope.isOpaque = true;
-              }, 19750)
-          }, 20000)
-          $scope.render = true
-      })
+      var random = Math.floor(Math.random() * 1000);
+      var date = moment().subtract(random, 'days').format('YYYY-MM-DD')
+      var url = apod_url + '?api_key=' + key + '&hd=true&date=' + date
+      $http.get(url)
+          .success(function (response) {
+              $scope.image = response;
+              $scope.render = true;
+          })
+
+      $interval(function () {
+          var random = Math.floor(Math.random() * 1000);
+          var date = moment().subtract(random, 'days').format('YYYY-MM-DD')
+          var url = apod_url + '?api_key=' + key + '&hd=true&date=' + date
+
+          $http.get(url)
+              .success(function (response) {
+                  $scope.image = response;
+              })
+      }, 20000)
 
     };
 
